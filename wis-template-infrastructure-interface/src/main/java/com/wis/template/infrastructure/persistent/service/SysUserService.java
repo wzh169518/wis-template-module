@@ -15,6 +15,7 @@ import java.util.List;
  * @since 2021/05/12
  */
 public interface SysUserService extends IService<User> {
-    public List<SysUser> selectUserList(Page page, SysUser user);
+//    public List<SysUser> selectUserList(Page page, SysUser user);
+    public List<SysUser> getList();
 
 }

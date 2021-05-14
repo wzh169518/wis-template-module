@@ -18,8 +18,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, User> impleme
     @Autowired
     private SysUserMapper sysUserMapper;
 
+//    @Override
+//    public List<SysUser> selectUserList(Page page, SysUser user) {
+//        return sysUserMapper.selectUserList(page, user);
+//    }
+
     @Override
-    public List<SysUser> selectUserList(Page page, SysUser user) {
-        return sysUserMapper.selectUserList(page, user);
+    public List<SysUser> getList() {
+        return sysUserMapper.getList();
     }
 }

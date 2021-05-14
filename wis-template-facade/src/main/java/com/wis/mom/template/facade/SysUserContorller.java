@@ -22,8 +22,8 @@ public class SysUserContorller {
     @Autowired
     SysUserService sysUserApplication1;
 
-    @Autowired
-    SysUserApplication sysUserApplication;
+//    @Autowired
+//    SysUserApplication sysUserApplication;
 
 
     /**
@@ -33,8 +33,8 @@ public class SysUserContorller {
     @ResponseBody
     public RspBase list(SysUser user)
     {
-//        return RspBase.success(sysUserApplication.getList(user));
-        return RspBase.success(sysUserApplication1.selectUserList(null, user));
+        return RspBase.success(sysUserApplication1.getList());
+//        return RspBase.success(sysUserApplication1.selectUserList(null, user));
     }
 
 

@@ -11,13 +11,13 @@ import java.util.List;
 @Service
 public class SysUserApplication {
 
-    @Autowired
-    private SysUserService sysUserService;
-
-
-    public List<SysUser> getList(SysUser user){
-        Page page = user.getPage();
-        return sysUserService.selectUserList(page, user);
-    }
+//    @Autowired
+//    private SysUserService sysUserService;
+//
+//
+//    public List<SysUser> getList(SysUser user){
+//        Page page = user.getPage();
+//        return sysUserService.selectUserList(page, user);
+//    }
 
 }

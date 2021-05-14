@@ -23,9 +23,9 @@
     <properties>
         <wis.mom.platform.version>1.0.0-SNAPSHOT</wis.mom.platform.version>
         <!-- spring 相关 -->
-        <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
-        <springboot.version>2.3.2.RELEASE</springboot.version>
-        <springboot.maven.plugin.version>2.3.2.RELEASE</springboot.maven.plugin.version>
+<!--        <spring-cloud.version>Hoxton.SR10</spring-cloud.version>-->
+        <springboot.version>2.1.1.RELEASE</springboot.version>
+        <springboot.maven.plugin.version>2.1.1.RELEASE</springboot.maven.plugin.version>
 
         <!-- 编码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -69,27 +69,29 @@
                 <scope>import</scope>
             </dependency>
             <!-- druid数据库连接池 -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
 
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>1.2.5</version>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-dependencies</artifactId>-->
+<!--                <version>${spring-cloud.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.baomidou</groupId>-->
+<!--                <artifactId>mybatis-plus</artifactId>-->
+<!--                <version>3.0.7.1</version>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -129,17 +131,6 @@
                 <version>${wis.mom.platform.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-support</artifactId>
-                <version>2.2.0</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-annotation</artifactId>
-                <version>3.0.7.1</version>
-            </dependency>
             <!-- pagehelper 分页插件 -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
