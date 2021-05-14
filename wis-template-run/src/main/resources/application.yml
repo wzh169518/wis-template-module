@@ -1,0 +1,24 @@
+server:
+  port: 80
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    username: root
+    password: 'wzh169518'
+    driverClassName: com.mysql.jdbc.Driver
+# mybatis plus配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  typeAliasesPackage: com.wis.template.infrastructure.persistent.model.pojo
+  mapper-locations: "classpath*:mapper/**.xml"
+# PageHelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

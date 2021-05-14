@@ -1,0 +1,167 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.wis.mom.platform</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>wis-template-module</artifactId>
+    <description>工程应用模板</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>wis-template-run</module>
+        <module>wis-template-facade</module>
+        <module>wis-template-application</module>
+        <module>wis-template-business</module>
+
+        <module>wis-template-infrastructure-interface</module>
+        <module>wis-template-infrastructure</module>
+
+        <module>wis-template-port</module>
+    </modules>
+
+    <properties>
+        <wis.mom.platform.version>1.0.0-SNAPSHOT</wis.mom.platform.version>
+        <!-- spring 相关 -->
+        <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
+        <springboot.version>2.3.2.RELEASE</springboot.version>
+        <springboot.maven.plugin.version>2.3.2.RELEASE</springboot.maven.plugin.version>
+
+        <!-- 编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- maven编译参数 -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId><!--SpringMVC-->
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-starter-web</artifactId>&lt;!&ndash;SpringMVC&ndash;&gt;-->
+<!--            </dependency>-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- druid数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.2.5</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.0.7.1</version>
+            </dependency>
+
+
+            <!-- 平台内部组件 -->
+            <dependency>
+                <groupId>com.wis.mom.platform</groupId>
+                <artifactId>wis-config</artifactId>
+                <version>${wis.mom.platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wis.mom.platform</groupId>
+                <artifactId>wis-template-business</artifactId>
+                <version>${wis.mom.platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wis.mom.platform</groupId>
+                <artifactId>wis-template-application</artifactId>
+                <version>${wis.mom.platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wis.mom.platform</groupId>
+                <artifactId>wis-template-port</artifactId>
+                <version>${wis.mom.platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wis.mom.platform</groupId>
+                <artifactId>wis-template-infrastructure</artifactId>
+                <version>${wis.mom.platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wis.mom.platform</groupId>
+                <artifactId>wis-template-facade</artifactId>
+                <version>${wis.mom.platform.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-support</artifactId>
+                <version>2.2.0</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>3.0.7.1</version>
+            </dependency>
+            <!-- pagehelper 分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>1.2.5</version>
+            </dependency>
+
+
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>mom-releases</id>
+            <url>http://maven.wis-longyun.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>mom-snapshots</id>
+            <url>http://maven.wis-longyun.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
